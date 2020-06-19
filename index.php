@@ -18,8 +18,8 @@
     <section>
 
     <?php  
-         if(isset($_SESSION['error1']) && !empty($_SESSION['error1'])) {
-             echo "sshi";
+         if(isset($_SESSION['error1']) && !empty($_SESSION['error'])) {
+             echo $_SESSION['error'];
              
          }
     

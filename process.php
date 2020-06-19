@@ -1,7 +1,7 @@
 <?php
 
 
-
+// validate input
 $error1 = 0;
 	  
 $amount = $_POST["Amount"] != ""? $_POST["Amount"] : $error1++ ;
@@ -10,13 +10,14 @@ $code = $_POST["Network_Provider"] != ""? $_POST["Network_Provider"] : $error1++
 
 
 if($error1 > 0){
-	$_SESSION['error1']= "please fill all fields";
+	$_SESSION['error']= "please fill all fields";
 	header("Location: index.php");
 } 
 
 $secretkey="l0hc6jc71yyy ";
 $publickey = "dotg8wddhzz6";
 
+// integrate airtime api from wallets.africa
 
 $curl = curl_init();
 curl_setopt_array($curl, array(
@@ -38,7 +39,7 @@ curl_setopt_array($curl, array(
 $response = curl_exec($curl);
 
 curl_close($curl);
-echo $response;
+echo $curl;
 
 
 ?>
