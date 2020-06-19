@@ -3,11 +3,12 @@
 
 
 $error1 = 0;
-	  
+	 // Validate inputs 
 $amount = $_POST["Amount"] != ""? $_POST["Amount"] : $error1++ ;
 $phoneNumber = $_POST["Phone_number"] != ""? $_POST["Phone_number"] : $error1++ ;
 $code = $_POST["Network_Provider"] != ""? $_POST["Network_Provider"] : $error1++ ;
 
+// Print out error message for empty fields
 
 if($error1 > 0){
 	$_SESSION['error1']= "please fill all fields";
@@ -17,6 +18,7 @@ if($error1 > 0){
 $secretkey="l0hc6jc71yyy ";
 $publickey = "dotg8wddhzz6";
 
+//Airtime api from wallets for developers
 
 $curl = curl_init();
 curl_setopt_array($curl, array(
